@@ -1,7 +1,10 @@
 <cfoutput>
+
+    <cfdump var="#rc.steamResult#" />
+
     <div class="grid">
         <header>
-            <a href="#buildURL( action = 'steam.display' )#">Steam API Project</a>
+            <h1>Steam API Project</h1>
         </header>
 
         <aside class="sidebar-left">
@@ -10,90 +13,83 @@
 
         <div class="box">
             <div class="box-header">
-                Box 1
+                <a href="#rc.steamResult.profileurl#"><p>#rc.steamResult.personaname#</p></a>
             </div>
             <div class="box-body">
-                Box 1 body
+                <img src="#rc.steamResult.avatarfull#" alt="Steam Avatar">
             </div>
         </div>
 
         <div class="box">  
             <div class="box-header">
-                Box 2
+                <p>Currently playing</p>
             </div>
             <div class="box-body">
-                Box 2 body
+                <a href="https://store.steampowered.com/app/#rc.steamResult.gameid#"><p>#rc.steamResult.gameextrainfo#</p></a>
             </div>
         </div>
         
         <div class="box">
             <div class="box-header">
-                Box 3
+                <p>Box 3</p>
             </div>
             <div class="box-body">
-                Box 3 body
+                <p>Box 3 body</p>
             </div>
         </div>
 
         <div class="box">
             <div class="box-header">
-                Box 4
+                <p>Box 4</p>
             </div>
             <div class="box-body">
-                Box 4 body
+                <p>Box 4 body</p>
             </div>
         </div>
 
         <div class="box">
             <div class="box-header">
-                Box 5
+                <p>Location</p>
             </div>
             <div class="box-body">
-                Box 5 body
+                <p>#rc.steamResult.locstatecode#, #rc.steamResult.loccountrycode#</p>
             </div>
         </div>
 
         <div class="box">
             <div class="box-header">
-                Box 6
+                <p>Box 6</p>
             </div>
             <div class="box-body">
-                Box 6 body
+                <p>Box 6 body</p>
             </div>
         </div>
         
         <div class="box">
             <div class="box-header">
-                Box 7
+                <p>Box 7</p>
             </div>
             <div class="box-body">
-                Box 7 body
+                <p>Box 7 body</p>
             </div>
         </div>
         
         <div class="box">
             <div class="box-header">
-                Box 8
+                <p>Box 8</p>
             </div>
             <div class="box-body">
-                Box 8 body
+                <p>Box 8 body</p>
             </div>
         </div>
         
         <div class="box">
             <div class="box-header">
-                Box 9
+                <p>Box 9</p>
             </div>
             <div class="box-body">
-                Box 9 body
+                <p>Box 9 body</p>
             </div>
         </div>
     </div>
-
-    <cfdump var="#rc#" />
-
-    <cfhttp result="result" method="GET" charset="utf-8" url="http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=E8E987E032FE559B7E1D84E7C85E2317&steamids=76561197972547940" />
-
-    <cfdump var="#result#" />
-
 </cfoutput>
