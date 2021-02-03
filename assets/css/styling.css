@@ -1,3 +1,10 @@
+.grid {
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px;
+    grid-template-rows: repeat(10, 75px);
+    grid-gap: 3em;
+}
+
 /* font */
 body {
     font-family: 'fixedsys_excelsior_3.01Rg', Arial, sans-sherif;
@@ -38,14 +45,24 @@ body {
     padding: 1em 0;
 }
 
-/* grid setup and positioning */
-
-.grid {
-    display: grid;
-    grid-template-columns: 200px 200px 200px 200px;
-    grid-template-rows: repeat(10, 75px);
-    grid-gap: 3em;
+img {
+    display: block;
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    overflow: hidden;
 }
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    padding-top: 40px;
+}
+
+/* grid setup and positioning */
 
 header {
     grid-column: 1 / 5;
