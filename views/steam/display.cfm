@@ -1,7 +1,5 @@
 <cfoutput>
 
-    <cfdump var="#rc.steamResult#" />
-
     <div class="grid">
         <header>
             <h1>Steam API Project</h1>
@@ -13,10 +11,10 @@
 
         <div class="box">
             <div class="box-header">
-                <a href="#rc.steamResult.profileurl#"><p>#rc.steamResult.personaname#</p></a>
+                <a href="#rc.profileURL#"><p>#rc.personaName#</p></a>
             </div>
             <div class="box-body">
-                <img src="#rc.steamResult.avatarfull#" alt="Steam Avatar">
+                <img src="#rc.avatarFull#" alt="Steam Avatar">
             </div>
         </div>
 
@@ -25,16 +23,18 @@
                 <p>Currently playing</p>
             </div>
             <div class="box-body">
-                <a href="https://store.steampowered.com/app/#rc.steamResult.gameid#"><p>#rc.steamResult.gameextrainfo#</p></a>
+                <a href="https://store.steampowered.com/app/#rc.gameID#"><p>#rc.gameExtraInfo#</p></a>
             </div>
         </div>
         
         <div class="box">
             <div class="box-header">
-                <p>Box 3</p>
+                <p>Top recently played</p>
             </div>
-            <div class="box-body">
-                <p>Box 3 body</p>
+            <div class="box-body-list">
+                <cfloop index="i" from="1" to="3">
+                    <ul>#rc.recentlyPlayed[i].name# #createTimeSpan(0, 0, #rc.recentlyPlayed[i].playtime_2weeks#, 0)#</ul>
+                </cfloop>
             </div>
         </div>
 
@@ -52,7 +52,7 @@
                 <p>Location</p>
             </div>
             <div class="box-body">
-                <p>#rc.steamResult.locstatecode#, #rc.steamResult.loccountrycode#</p>
+                <p>#rc.locStateCode#, #rc.locCountryCode#</p>
             </div>
         </div>
 
