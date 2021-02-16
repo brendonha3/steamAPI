@@ -1,0 +1,93 @@
+.grid {
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px;
+    grid-template-rows: repeat(10, 75px);
+    grid-gap: 3em;
+}
+
+/* font */
+body {
+    font-family: 'fixedsys_excelsior_3.01Rg', Arial, sans-sherif;
+    font-size: 18px;
+}
+
+/*spacing and borders */
+
+header,
+aside,
+.box {
+    border-style: solid;
+    border-width:5px;
+    padding: 1em;
+}
+
+.box-body, 
+.box-header,
+header {
+    display: flex;
+    align-content: center;
+    justify-content: center;    
+}
+
+.box-header {
+    border-bottom: 5px black solid;
+    padding-bottom: 5px;
+    margin: -1em;
+}
+
+.box-body {
+    padding-top: 20px;
+}
+
+body {
+    margin: 0 auto;
+    max-width: 56em;
+    padding: 1em 0;
+}
+
+img {
+    display: block;
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    overflow: hidden;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    padding-top: 40px;
+}
+
+/* grid setup and positioning */
+
+header {
+    grid-column: 1 / 5;
+    grid-row: 1 / span 2;
+}
+
+.sidebar-left {
+    grid-row: 3 / 10;
+}
+
+.box:nth-of-type(1), 
+.box:nth-of-type(2), 
+.box:nth-of-type(3) {
+    grid-row: 3 / span 2;
+}
+
+.box:nth-of-type(4),
+.box:nth-of-type(5),
+.box:nth-of-type(6) {
+    grid-row: 5 / span 2;
+}
+
+.box:nth-of-type(7),
+.box:nth-of-type(8),
+.box:nth-of-type(9) {
+    grid-row: 7 / span 2;
+}
+
